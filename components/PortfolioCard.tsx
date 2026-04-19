@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { PortfolioItem } from "@/lib/portfolio";
 
 const statusColor: Record<PortfolioItem["status"], string> = {
@@ -16,28 +17,40 @@ export default function PortfolioCard({ item }: { item: PortfolioItem }) {
       className="group relative glass rounded-2xl overflow-hidden block hover:border-tide-500/30 transition-all hover:-translate-y-1 hover:shadow-card"
     >
       {/* Preview */}
-      <div className="relative aspect-[16/10] overflow-hidden border-b border-white/5">
-        {/* Soft gradient preview — placeholder until real screenshots land */}
-        <div
-          className={`absolute inset-0 transition-transform duration-700 group-hover:scale-105 ${previewGradient(
-            item.accent
-          )}`}
-        />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(255,255,255,0.08),transparent_60%)]" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="font-display text-[28px] md:text-[36px] font-semibold text-white/90 tracking-tight">
-            {item.name}
-          </span>
-        </div>
+      <div className="relative aspect-[16/10] overflow-hidden border-b border-white/5 bg-ink-700">
+        {item.screenshot ? (
+          <Image
+            src={item.screenshot}
+            alt={`${item.name} homepage screenshot`}
+            fill
+            sizes="(min-width: 768px) 50vw, 100vw"
+            className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+          />
+        ) : (
+          <>
+            <div
+              className={`absolute inset-0 transition-transform duration-700 group-hover:scale-105 ${previewGradient(
+                item.accent
+              )}`}
+            />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="font-display text-[28px] md:text-[36px] font-semibold text-white/90 tracking-tight">
+                {item.name}
+              </span>
+            </div>
+          </>
+        )}
+        {/* Top fade so the status badge + year always read clean over screenshots */}
+        <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-ink-900/70 to-transparent pointer-events-none" />
         <div className="absolute top-4 left-4">
           <span
-            className={`inline-flex items-center gap-1.5 text-[11px] font-medium tracking-wide uppercase px-2.5 py-1 rounded-full border ${statusColor[item.status]}`}
+            className={`inline-flex items-center gap-1.5 text-[11px] font-medium tracking-wide uppercase px-2.5 py-1 rounded-full border ${statusColor[item.status]} backdrop-blur`}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-current" />
             {item.status}
           </span>
         </div>
-        <div className="absolute top-4 right-4 text-[11px] text-white/60 font-mono">
+        <div className="absolute top-4 right-4 text-[11px] text-white/80 font-mono">
           {item.year}
         </div>
       </div>

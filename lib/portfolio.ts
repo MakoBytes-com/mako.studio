@@ -22,7 +22,8 @@ export const portfolio: PortfolioItem[] = [
     tags: ["Next.js", "Supabase", "Stripe", "Mux", "AI"],
     status: "Live",
     year: "2026",
-    accent: "blue"
+    accent: "blue",
+    screenshot: "/portfolio/toppaws.png"
   },
   {
     slug: "makobot",
@@ -34,7 +35,8 @@ export const portfolio: PortfolioItem[] = [
     tags: ["WPF", "Next.js", "Vercel", "Azure Trusted Signing"],
     status: "Live",
     year: "2026",
-    accent: "silver"
+    accent: "silver",
+    screenshot: "/portfolio/makobot.png"
   },
   {
     slug: "aipromptshive",
@@ -46,7 +48,8 @@ export const portfolio: PortfolioItem[] = [
     tags: ["Next.js", "Supabase", "Cloudflare R2", "SEO"],
     status: "Live",
     year: "2026",
-    accent: "steel"
+    accent: "steel",
+    screenshot: "/portfolio/aipromptshive.png"
   },
   {
     slug: "lengleng",
@@ -58,7 +61,8 @@ export const portfolio: PortfolioItem[] = [
     tags: ["Next.js", "NextAuth", "Neon", "WPF"],
     status: "Live",
     year: "2026",
-    accent: "blue"
+    accent: "blue",
+    screenshot: "/portfolio/lengleng.png"
   },
   {
     slug: "buffaloseal",
@@ -70,7 +74,8 @@ export const portfolio: PortfolioItem[] = [
     tags: ["Client", "Next.js", "SEO", "Local"],
     status: "Client",
     year: "2026",
-    accent: "silver"
+    accent: "silver",
+    screenshot: "/portfolio/buffaloseal.png"
   },
   {
     slug: "woodlands",
@@ -82,7 +87,8 @@ export const portfolio: PortfolioItem[] = [
     tags: ["Client", "Next.js", "Healthcare", "Forms"],
     status: "Client",
     year: "2026",
-    accent: "steel"
+    accent: "steel",
+    screenshot: "/portfolio/woodlands.png"
   },
   {
     slug: "makobytes",
@@ -94,6 +100,7 @@ export const portfolio: PortfolioItem[] = [
     tags: ["Next.js", "Cloudflare", "Analytics"],
     status: "Live",
     year: "2026",
-    accent: "blue"
+    accent: "blue",
+    screenshot: "/portfolio/makobytes.png"
   }
 ];

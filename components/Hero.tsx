@@ -64,6 +64,7 @@ export default function Hero() {
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ${
                 active === "a" ? "opacity-100" : "opacity-0"
               }`}
+              style={{ filter: "brightness(0.7) saturate(1.05)" }}
               src="/hero.mp4"
               autoPlay
               muted
@@ -76,6 +77,7 @@ export default function Hero() {
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ${
                 active === "b" ? "opacity-100" : "opacity-0"
               }`}
+              style={{ filter: "brightness(0.7) saturate(1.05)" }}
               src="/hero.mp4"
               muted
               playsInline
@@ -98,27 +100,29 @@ export default function Hero() {
         {/* God rays sit above both video + fallback for consistent mood */}
         <div className="god-rays" />
 
-        {/* Dark vignette + bottom fade for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-ink-900/40 via-ink-900/20 to-ink-900" />
-        <div className="absolute inset-0 bg-hero-radial" />
+        {/* Left-weighted dark pane so text stays readable on busy footage.
+            Right side stays bright to show off the video. */}
+        <div className="absolute inset-0 bg-gradient-to-r from-ink-900 via-ink-900/75 to-ink-900/10" />
+        {/* Top + bottom fade — softens navbar edge and transitions into next section */}
+        <div className="absolute inset-0 bg-gradient-to-b from-ink-900/60 via-transparent to-ink-900" />
+        {/* Subtle blue atmosphere at top */}
+        <div className="absolute inset-0 bg-hero-radial opacity-60" />
       </div>
 
       {/* Content */}
       <div className="container-narrow relative z-10 pt-28 pb-20 md:pt-0 md:pb-0">
         <div className="max-w-3xl">
-          <span className="section-label">Mako Studio — Est. 2026</span>
+          <span className="section-label">Mako Studio — Buffalo, NY</span>
 
-          <h1 className="mt-6 font-display font-semibold text-[44px] md:text-[76px] leading-[0.95] tracking-tight">
-            Websites that move
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-steel-100 via-tide-300 to-steel-400">
-              like deep water.
-            </span>
+          <h1 className="mt-6 font-display font-semibold text-[40px] md:text-[68px] leading-[1.02] tracking-tight">
+            Design and engineering
+            <span className="block text-steel-400">for the modern web.</span>
           </h1>
 
           <p className="mt-6 max-w-xl text-[16px] md:text-[18px] text-steel-300 leading-relaxed">
-            Mako Studio designs and ships modern, premium websites for small
-            businesses, professionals, and ambitious brands. Silent, fast,
-            precise — built to out-swim the template crowd.
+            Mako Studio is the web practice inside Mako Logics. We design,
+            build, and ship websites end-to-end — from marketing sites to
+            production web applications.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">

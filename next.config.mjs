@@ -6,11 +6,29 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // Pin tracing root to this project — silences the multi-lockfile warning
-  // (a stray package-lock.json in %USERPROFILE% was being chosen otherwise).
   outputFileTracingRoot: __dirname,
   images: {
     remotePatterns: [{ protocol: "https", hostname: "**" }]
+  },
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+          },
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=63072000; includeSubDomains; preload"
+          }
+        ]
+      }
+    ];
   }
 };
 

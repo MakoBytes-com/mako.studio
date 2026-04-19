@@ -12,7 +12,34 @@ type Body = {
   website?: string;
 };
 
+// In-memory rate limiter — 3 submissions per IP per 10 minutes.
+// Resets on cold start, which is fine for a portfolio contact form.
+const rateMap = new Map<string, number[]>();
+const RATE_MAX = 3;
+const RATE_WINDOW_MS = 10 * 60 * 1000;
+
+function rateLimit(ip: string): boolean {
+  const now = Date.now();
+  const hits = (rateMap.get(ip) ?? []).filter((t) => now - t < RATE_WINDOW_MS);
+  if (hits.length >= RATE_MAX) return false;
+  hits.push(now);
+  rateMap.set(ip, hits);
+  return true;
+}
+
 export async function POST(req: Request) {
+  const ip =
+    req.headers.get("x-forwarded-for")?.split(",")[0].trim() ??
+    req.headers.get("x-real-ip") ??
+    "unknown";
+
+  if (!rateLimit(ip)) {
+    return NextResponse.json(
+      { error: "Too many requests. Try again in a few minutes." },
+      { status: 429 }
+    );
+  }
+
   let body: Body;
   try {
     body = await req.json();

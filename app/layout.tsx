@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://makoai.studio"),
   title: "Mako Studio — Web Design & Development",
   description:
     "Mako Studio designs and ships modern, premium websites for small businesses, professionals, and ambitious brands. Based in Montgomery, TX.",
@@ -81,7 +83,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

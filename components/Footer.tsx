@@ -81,7 +81,11 @@ export default function Footer() {
 
         <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[12px] text-steel-400">
           <div>© {year} Mako Studio. A Mako Logics practice.</div>
-          <div className="font-mono tracking-wider">Montgomery, TX</div>
+          <div className="flex items-center gap-4">
+            <a href="/privacy" className="hover:text-steel-200">Privacy</a>
+            <a href="/terms" className="hover:text-steel-200">Terms</a>
+            <span className="font-mono tracking-wider">Montgomery, TX</span>
+          </div>
         </div>
       </div>
     </footer>

@@ -109,7 +109,7 @@ export const portfolio: PortfolioItem[] = [
     url: "https://bulldogsecurityservice.com",
     tagline: "Home security & smart home (ADT partner)",
     description:
-      "Multi-state residential security provider and ADT authorized dealer — 30,000+ homes protected since 2010. Design by others; Makologics MSP handles backend infrastructure, uptime, and ongoing maintenance.",
+      "Multi-state residential security provider and ADT authorized dealer — 30,000+ homes protected since 2010. Maintained by Makologics MSP — backend infrastructure, uptime, and ongoing updates.",
     tags: ["Client", "Makologics MSP", "Backend", "Maintenance"],
     status: "Client",
     year: "2026",
@@ -122,7 +122,7 @@ export const portfolio: PortfolioItem[] = [
     url: "https://pro-surve.com",
     tagline: "Industrial inspection & NDT — League City, TX",
     description:
-      "Inspection, engineering, and non-destructive testing for oil & gas, petrochemical, aerospace, and power generation clients. Ships the ProVision™ inspection-tracking platform. Design by others; Makologics MSP handles ongoing maintenance and site changes.",
+      "Inspection, engineering, and non-destructive testing for oil & gas, petrochemical, aerospace, and power generation clients. Ships the ProVision™ inspection-tracking platform. Maintained by Makologics MSP — ongoing updates and site changes.",
     tags: ["Client", "Makologics MSP", "Maintenance", "Industrial"],
     status: "Client",
     year: "2026",

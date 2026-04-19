@@ -77,9 +77,21 @@ export default function Contact() {
                   (281) 206-4848
                 </a>
               </div>
-              <div className="flex items-center gap-3">
-                <IconPin />
-                <span className="text-steel-300">The Woodlands, TX — remote-first</span>
+              <div className="flex items-start gap-3">
+                <span className="mt-0.5"><IconPin /></span>
+                <div className="text-steel-300 leading-relaxed">
+                  <div className="text-steel-100 font-medium">Mako Logics HQ</div>
+                  <div>550 Club Dr #264</div>
+                  <div>Montgomery, TX 77316</div>
+                  <a
+                    href="https://maps.google.com/?q=550+Club+Dr+%23264+Montgomery+TX+77316"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 inline-block text-tide-300 hover:text-tide-400 text-[13px]"
+                  >
+                    Get directions →
+                  </a>
+                </div>
               </div>
             </div>
           </div>

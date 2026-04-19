@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Mako Studio — Web Design & Development",
   description:
-    "Mako Studio designs and ships modern, premium websites for small businesses, professionals, and ambitious brands. Based in The Woodlands, TX.",
+    "Mako Studio designs and ships modern, premium websites for small businesses, professionals, and ambitious brands. Based in Montgomery, TX.",
   openGraph: {
     title: "Mako Studio — Web Design & Development",
     description:

@@ -80,7 +80,7 @@ export default function PortfolioCard({ item }: { item: PortfolioItem }) {
             />
           </svg>
         </div>
-        <p className="mt-3 text-[14px] text-steel-300 leading-relaxed line-clamp-3">
+        <p className="mt-3 text-[14px] text-steel-300 leading-relaxed">
           {item.description}
         </p>
         <div className="mt-5 flex flex-wrap gap-1.5">

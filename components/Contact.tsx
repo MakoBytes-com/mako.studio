@@ -94,6 +94,18 @@ export default function Contact() {
                 </div>
               </div>
             </div>
+
+            <div className="mt-8 relative rounded-2xl overflow-hidden border border-white/10 shadow-card aspect-[16/10]">
+              <iframe
+                title="Mako Logics HQ — 550 Club Dr #264, Montgomery, TX 77316"
+                src="https://www.google.com/maps?q=550+Club+Dr+%23264+Montgomery+TX+77316&z=15&output=embed"
+                className="absolute inset-0 w-full h-full"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                style={{ border: 0, filter: "grayscale(0.3) brightness(0.9) contrast(1.05)" }}
+              />
+              <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-tide-500/10 rounded-2xl" />
+            </div>
           </div>
 
           <div className="md:col-span-6 md:col-start-7">

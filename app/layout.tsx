@@ -20,6 +20,44 @@ export const metadata: Metadata = {
   }
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Mako Studio",
+  alternateName: "MakoAI Studio",
+  description:
+    "AI-native web design and engineering studio. Part of Mako Logics.",
+  url: "https://makoai.studio",
+  telephone: "+1-281-206-4848",
+  email: "admin@makoai.studio",
+  parentOrganization: {
+    "@type": "Organization",
+    name: "Mako Logics",
+    url: "https://makologics.com"
+  },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "550 Club Dr #264",
+    addressLocality: "Montgomery",
+    addressRegion: "TX",
+    postalCode: "77316",
+    addressCountry: "US"
+  },
+  areaServed: {
+    "@type": "Country",
+    name: "United States"
+  },
+  knowsAbout: [
+    "Web Design",
+    "Web Development",
+    "Next.js",
+    "AI-native development",
+    "SEO",
+    "Managed Hosting"
+  ],
+  sameAs: ["https://github.com/MakoBytes-com"]
+};
+
 export default function RootLayout({
   children
 }: {
@@ -37,6 +75,10 @@ export default function RootLayout({
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body>{children}</body>

@@ -1,5 +1,5 @@
 const stats = [
-  { n: "7", l: "Sites Shipped" },
+  { n: "100+", l: "Sites Shipped" },
   { n: "100%", l: "On-time Launches" },
   { n: "<2s", l: "Typical LCP" },
   { n: "1", l: "Point of Contact" }

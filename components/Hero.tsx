@@ -112,7 +112,7 @@ export default function Hero() {
       {/* Content */}
       <div className="container-narrow relative z-10 pt-28 pb-20 md:pt-0 md:pb-0">
         <div className="max-w-3xl">
-          <span className="section-label">Mako Studio — Buffalo, NY</span>
+          <span className="section-label">Mako Studio — The Woodlands, TX</span>
 
           <h1 className="mt-6 font-display font-semibold text-[40px] md:text-[68px] leading-[1.02] tracking-tight">
             Design and engineering

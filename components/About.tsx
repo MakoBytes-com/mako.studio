@@ -45,10 +45,10 @@ export default function About() {
             </h2>
             <p className="mt-6 text-[15px] text-steel-300 leading-relaxed">
               Mako Studio is the web practice inside{" "}
-              <span className="text-steel-100">Mako Logics</span> — a Buffalo,
-              NY-based shop that's shipped AI platforms, client sites,
+              <span className="text-steel-100">Mako Logics</span> — a
+              Texas-based shop that's shipped AI platforms, client sites,
               commercial software, and a Windows-signed desktop app. One
-              person runs the whole pipeline, so nothing gets lost between
+              team runs the whole pipeline, so nothing gets lost between
               "the designer" and "the developer."
             </p>
 

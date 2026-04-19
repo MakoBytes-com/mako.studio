@@ -62,15 +62,15 @@ export default function Contact() {
               <div className="flex items-center gap-3">
                 <IconMail />
                 <a
-                  href="mailto:russell.sailors@gmail.com"
+                  href="mailto:admin@mako.studio"
                   className="text-steel-200 hover:text-tide-300"
                 >
-                  russell.sailors@gmail.com
+                  admin@mako.studio
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <IconPin />
-                <span className="text-steel-300">Buffalo, NY — remote-first</span>
+                <span className="text-steel-300">The Woodlands, TX — remote-first</span>
               </div>
             </div>
           </div>

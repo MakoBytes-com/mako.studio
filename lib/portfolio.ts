@@ -67,7 +67,7 @@ export const portfolio: PortfolioItem[] = [
   {
     slug: "buffaloseal",
     name: "Buffalo Seal & Gasket",
-    url: "https://buffalosealandgasket.com",
+    url: "https://buffaloseal-web.vercel.app",
     tagline: "Industrial sealing solutions — Buffalo, NY",
     description:
       "Full brand + site for an industrial seal and gasket supplier. Clean, professional, contact-driven. Built and maintained by Makologics MSP.",
@@ -80,7 +80,7 @@ export const portfolio: PortfolioItem[] = [
   {
     slug: "woodlands",
     name: "Woodlands Family Psychiatry",
-    url: "https://woodlandsfamilypsychiatry.com",
+    url: "https://woodlandsfamilypsychiatrycom.vercel.app",
     tagline: "Private psychiatric practice",
     description:
       "Warm, professional website for a family psychiatry practice. Intake forms, provider bios, services, and HIPAA-aware content.",

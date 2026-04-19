@@ -67,11 +67,11 @@ export const portfolio: PortfolioItem[] = [
   {
     slug: "buffaloseal",
     name: "Buffalo Seal & Gasket",
-    url: "https://buffaloseal-web.vercel.app",
-    tagline: "Industrial sealing solutions — Buffalo, NY",
+    url: "https://buffaloseal-showcase.vercel.app",
+    tagline: "Industrial sealing solutions — Houston, TX",
     description:
-      "Full brand + site for an industrial seal and gasket supplier. Clean, professional, contact-driven. Built and maintained by Makologics MSP.",
-    tags: ["Client", "Next.js", "SEO", "Local"],
+      "Full brand + site for a Houston-based industrial seal and gasket supplier. Clean, professional, contact-driven. Built and maintained by Makologics MSP.",
+    tags: ["Client", "Next.js", "Makologics MSP", "Local SEO"],
     status: "Client",
     year: "2026",
     accent: "silver",
@@ -79,16 +79,42 @@ export const portfolio: PortfolioItem[] = [
   },
   {
     slug: "woodlands",
-    name: "Woodlands Family Psychiatry",
-    url: "https://woodlandsfamilypsychiatrycom.vercel.app",
-    tagline: "Private psychiatric practice",
+    name: "Family Psychiatry of The Woodlands",
+    url: "https://woodlands-showcase.vercel.app",
+    tagline: "Private psychiatric practice — The Woodlands, TX",
     description:
-      "Warm, professional website for a family psychiatry practice. Intake forms, provider bios, services, and HIPAA-aware content.",
-    tags: ["Client", "Next.js", "Healthcare", "Forms"],
+      "Warm, professional website for a family psychiatry practice with 30+ years in The Woodlands, TX. Provider bios, services, intake forms, clinical trials, and HIPAA-aware content. Maintained by Makologics MSP.",
+    tags: ["Client", "Next.js", "Healthcare", "Makologics MSP"],
     status: "Client",
     year: "2026",
     accent: "steel",
     screenshot: "/portfolio/woodlands.png"
+  },
+  {
+    slug: "davis-investigations",
+    name: "Davis Investigation Services",
+    url: "https://www.davisinvestigationservices.com",
+    tagline: "Pre-employment screening — Conroe, TX",
+    description:
+      "Conroe, TX-based investigation firm serving Fortune 500 companies and government agencies since 2005. Site covers pre-employment screening, background checks, DOT drug testing, and legal investigations. Maintained by Makologics MSP.",
+    tags: ["Client", "Makologics MSP", "Compliance", "Legal"],
+    status: "Client",
+    year: "2026",
+    accent: "silver",
+    screenshot: "/portfolio/davis.png"
+  },
+  {
+    slug: "bulldog-security",
+    name: "Bulldog Security Service",
+    url: "https://bulldogsecurityservice.com",
+    tagline: "Home security & smart home (ADT partner)",
+    description:
+      "Multi-state residential security provider and ADT authorized dealer — 30,000+ homes protected since 2010. Design by others; Makologics MSP handles backend infrastructure, uptime, and ongoing maintenance.",
+    tags: ["Client", "Makologics MSP", "Backend", "Maintenance"],
+    status: "Client",
+    year: "2026",
+    accent: "steel",
+    screenshot: "/portfolio/bulldog.png"
   },
   {
     slug: "makobytes",

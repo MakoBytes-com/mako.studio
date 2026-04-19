@@ -43,7 +43,7 @@ export async function POST(req: Request) {
   }
 
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.CONTACT_TO_EMAIL ?? "admin@mako.studio";
+  const to = process.env.CONTACT_TO_EMAIL ?? "admin@makoai.studio";
   const from = process.env.CONTACT_FROM_EMAIL ?? "onboarding@resend.dev";
 
   if (!apiKey) {

@@ -115,14 +115,14 @@ export default function Hero() {
           <span className="section-label">Mako Studio — The Woodlands, TX</span>
 
           <h1 className="mt-6 font-display font-semibold text-[40px] md:text-[68px] leading-[1.02] tracking-tight">
-            Design and engineering
-            <span className="block text-steel-400">for the modern web.</span>
+            AI-native design
+            <span className="block text-steel-400">and engineering.</span>
           </h1>
 
           <p className="mt-6 max-w-xl text-[16px] md:text-[18px] text-steel-300 leading-relaxed">
-            Mako Studio is the web practice inside Mako Logics. We design,
-            build, and ship websites end-to-end — from marketing sites to
-            production web applications.
+            Mako Studio is the web practice inside Mako Logics. Every site we
+            ship is designed, built, and deployed with AI-native workflows —
+            premium quality at a fraction of traditional agency timelines.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">

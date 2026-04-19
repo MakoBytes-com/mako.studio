@@ -69,7 +69,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:admin@mako.studio"
+                  href="mailto:admin@makoai.studio"
                   className="text-steel-300 hover:text-white"
                 >
                   Email us

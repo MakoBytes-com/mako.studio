@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "Mako Studio — Web Design & Development",
     description:
       "Modern, premium websites designed and shipped fast. Mako Studio.",
-    url: "https://mako.studio",
+    url: "https://makoai.studio",
     siteName: "Mako Studio",
     type: "website"
   },

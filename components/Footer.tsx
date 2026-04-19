@@ -80,7 +80,7 @@ export default function Footer() {
         </div>
 
         <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[12px] text-steel-400">
-          <div>© {year} Mako Studio. A Mako Logics practice.</div>
+          <div>© {year} Mako Logics LLC. Mako Studio is a practice of Mako Logics.</div>
           <div className="flex items-center gap-4">
             <a href="/privacy" className="hover:text-steel-200">Privacy</a>
             <a href="/terms" className="hover:text-steel-200">Terms</a>

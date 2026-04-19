@@ -23,8 +23,9 @@ export default function Privacy() {
 
         <div className="mt-10 space-y-6 text-[15px] text-steel-300 leading-relaxed max-w-3xl">
           <p>
-            Mako Studio (&ldquo;we,&rdquo; &ldquo;us&rdquo;) operates{" "}
-            <strong>makoai.studio</strong> as a marketing site for Mako Logics.
+            Mako Studio is a practice of <strong>Mako Logics LLC</strong>, a Texas
+            limited liability company (&ldquo;we,&rdquo; &ldquo;us&rdquo;),
+            which operates <strong>makoai.studio</strong> as its marketing site.
             This page explains what information we collect, why, and how we
             handle it. We try to keep this simple and honest — if you have a
             question, email{" "}

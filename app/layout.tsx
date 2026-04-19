@@ -35,6 +35,7 @@ const jsonLd = {
   parentOrganization: {
     "@type": "Organization",
     name: "Mako Logics",
+    legalName: "Mako Logics LLC",
     url: "https://makologics.com"
   },
   address: {

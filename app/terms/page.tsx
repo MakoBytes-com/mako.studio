@@ -24,19 +24,21 @@ export default function Terms() {
         <div className="mt-10 space-y-6 text-[15px] text-steel-300 leading-relaxed max-w-3xl">
           <p>
             These terms govern your use of <strong>makoai.studio</strong>,
-            the Mako Studio marketing website. By using this site, you agree
+            the marketing website for Mako Studio, a practice of{" "}
+            <strong>Mako Logics LLC</strong>. By using this site, you agree
             to the terms below. They do not cover separate client engagement
             contracts — those are negotiated directly and governed by their
-            own signed agreement.
+            own signed agreement executed with Mako Logics LLC.
           </p>
 
           <h2 className="font-display text-[22px] font-semibold text-steel-100 mt-10">
             Who we are
           </h2>
           <p>
-            Mako Studio is the web practice inside{" "}
-            <strong>Mako Logics</strong>, based at 550 Club Dr #264,
-            Montgomery, TX 77316. Contact:{" "}
+            <strong>Mako Logics LLC</strong> is a Texas limited liability
+            company based at 550 Club Dr #264, Montgomery, TX 77316. Mako
+            Studio is the web design and engineering practice inside the LLC.
+            Contact:{" "}
             <a href="mailto:admin@makoai.studio" className="text-tide-300">
               admin@makoai.studio
             </a>{" "}
@@ -52,7 +54,7 @@ export default function Terms() {
           </h2>
           <p>
             The writing, design, code, and imagery on this site are owned by
-            Mako Studio and Mako Logics unless otherwise attributed.
+            Mako Logics LLC unless otherwise attributed.
             Screenshots of client work appear with the client&rsquo;s implicit
             permission as part of a standard portfolio relationship. If
             you&rsquo;re one of those clients and want a screenshot removed

@@ -1,0 +1,220 @@
+"use client";
+
+import { useState } from "react";
+
+type Status = "idle" | "loading" | "success" | "error";
+
+export default function Contact() {
+  const [status, setStatus] = useState<Status>("idle");
+  const [error, setError] = useState<string | null>(null);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("loading");
+    setError(null);
+
+    const form = e.currentTarget;
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+
+      if (!res.ok) {
+        const { error: errMsg } = await res.json().catch(() => ({}));
+        throw new Error(errMsg ?? "Submission failed");
+      }
+
+      setStatus("success");
+      form.reset();
+    } catch (err) {
+      setStatus("error");
+      setError(err instanceof Error ? err.message : "Submission failed");
+    }
+  }
+
+  return (
+    <section
+      id="contact"
+      className="relative py-28 md:py-36 border-b border-white/5"
+    >
+      <div className="container-narrow">
+        <div className="grid md:grid-cols-12 gap-12">
+          <div className="md:col-span-5">
+            <span className="section-label">Start a project</span>
+            <h2 className="mt-5 font-display font-semibold text-[36px] md:text-[52px] leading-[1.05] tracking-tight">
+              Tell us
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-tide-300 to-steel-200">
+                what you need.
+              </span>
+            </h2>
+            <p className="mt-6 text-[15px] text-steel-300 leading-relaxed">
+              Send a few sentences about the site you want, your timeline, and
+              what "done" looks like to you. You'll hear back within one
+              business day.
+            </p>
+
+            <div className="mt-10 space-y-4 text-[14px]">
+              <div className="flex items-center gap-3">
+                <IconMail />
+                <a
+                  href="mailto:russell.sailors@gmail.com"
+                  className="text-steel-200 hover:text-tide-300"
+                >
+                  russell.sailors@gmail.com
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <IconPin />
+                <span className="text-steel-300">Buffalo, NY — remote-first</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="md:col-span-6 md:col-start-7">
+            <form
+              onSubmit={handleSubmit}
+              className="glass rounded-2xl p-6 md:p-8 space-y-4"
+            >
+              <div className="grid md:grid-cols-2 gap-4">
+                <Field label="Name" name="name" required />
+                <Field
+                  label="Email"
+                  name="email"
+                  type="email"
+                  required
+                />
+              </div>
+              <Field
+                label="Company (optional)"
+                name="company"
+              />
+              <Field
+                label="Budget range"
+                name="budget"
+                placeholder="e.g. $3k-5k, or not sure yet"
+              />
+              <Field
+                label="Tell us about the project"
+                name="message"
+                as="textarea"
+                required
+              />
+
+              {/* Honeypot — hidden field to catch bots */}
+              <input
+                type="text"
+                name="website"
+                className="hidden"
+                tabIndex={-1}
+                autoComplete="off"
+              />
+
+              <button
+                type="submit"
+                disabled={status === "loading"}
+                className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-tide-500 hover:bg-tide-400 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium text-[14px] transition-all shadow-glow"
+              >
+                {status === "loading" ? "Sending…" : "Send message"}
+                {status !== "loading" && (
+                  <svg viewBox="0 0 16 16" className="w-4 h-4" fill="none">
+                    <path
+                      d="M3 8h10m0 0l-4-4m4 4l-4 4"
+                      stroke="currentColor"
+                      strokeWidth="1.75"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                )}
+              </button>
+
+              {status === "success" && (
+                <p className="text-[13px] text-emerald-300 text-center">
+                  Thanks — your message is in. You'll hear back within a
+                  business day.
+                </p>
+              )}
+              {status === "error" && (
+                <p className="text-[13px] text-red-300 text-center">
+                  Something went wrong
+                  {error ? ` — ${error}` : ""}. Try emailing directly.
+                </p>
+              )}
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Field({
+  label,
+  name,
+  type = "text",
+  as = "input",
+  required,
+  placeholder
+}: {
+  label: string;
+  name: string;
+  type?: string;
+  as?: "input" | "textarea";
+  required?: boolean;
+  placeholder?: string;
+}) {
+  const baseClass =
+    "w-full bg-ink-800/60 border border-white/5 focus:border-tide-500/50 focus:outline-none rounded-xl px-4 py-3 text-[14px] text-steel-100 placeholder-steel-400/60 transition-colors";
+  return (
+    <label className="block">
+      <span className="block text-[12px] tracking-wide uppercase text-steel-400 mb-1.5">
+        {label}
+        {required && <span className="text-tide-400 ml-1">*</span>}
+      </span>
+      {as === "textarea" ? (
+        <textarea
+          name={name}
+          required={required}
+          rows={5}
+          placeholder={placeholder}
+          className={baseClass + " resize-y"}
+        />
+      ) : (
+        <input
+          type={type}
+          name={name}
+          required={required}
+          placeholder={placeholder}
+          className={baseClass}
+        />
+      )}
+    </label>
+  );
+}
+
+function IconMail() {
+  return (
+    <svg viewBox="0 0 24 24" className="w-5 h-5 text-tide-300" fill="none">
+      <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M3 7l9 7 9-7" stroke="currentColor" strokeWidth="1.5" />
+    </svg>
+  );
+}
+
+function IconPin() {
+  return (
+    <svg viewBox="0 0 24 24" className="w-5 h-5 text-tide-300" fill="none">
+      <path
+        d="M12 22s7-7.5 7-13a7 7 0 10-14 0c0 5.5 7 13 7 13z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      />
+      <circle cx="12" cy="9" r="2.5" stroke="currentColor" strokeWidth="1.5" />
+    </svg>
+  );
+}

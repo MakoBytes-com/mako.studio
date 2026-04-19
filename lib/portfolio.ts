@@ -117,6 +117,19 @@ export const portfolio: PortfolioItem[] = [
     screenshot: "/portfolio/bulldog.png"
   },
   {
+    slug: "pro-surve",
+    name: "Pro-Surve Technical Services",
+    url: "https://pro-surve.com",
+    tagline: "Industrial inspection & NDT — League City, TX",
+    description:
+      "Inspection, engineering, and non-destructive testing for oil & gas, petrochemical, aerospace, and power generation clients. Ships the ProVision™ inspection-tracking platform. Design by others; Makologics MSP handles ongoing maintenance and site changes.",
+    tags: ["Client", "Makologics MSP", "Maintenance", "Industrial"],
+    status: "Client",
+    year: "2026",
+    accent: "silver",
+    screenshot: "/portfolio/prosurve.png"
+  },
+  {
     slug: "makobytes",
     name: "MakoBytes",
     url: "https://makobytes.com",

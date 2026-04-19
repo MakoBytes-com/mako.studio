@@ -2,7 +2,7 @@ export const dynamic = "force-static";
 
 const body = `# Mako Studio
 
-> AI-native web design and engineering studio. The web practice inside Mako Logics.
+> AI-native web design and engineering team. The in-house web shop at Mako Logics LLC.
 
 Mako Studio designs and ships modern, premium websites for small businesses,
 professionals, and ambitious brands. Every project is built with Claude as

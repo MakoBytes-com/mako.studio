@@ -44,8 +44,8 @@ export default function About() {
               <span className="text-steel-400">Start to finish.</span>
             </h2>
             <p className="mt-6 text-[15px] text-steel-300 leading-relaxed">
-              Mako Studio is the AI-native web practice inside{" "}
-              <span className="text-steel-100">Mako Logics</span> — a
+              Mako Studio is the in-house AI-native web team at{" "}
+              <span className="text-steel-100">Mako Logics LLC</span> — a
               Texas-based shop that's shipped AI platforms, client sites,
               commercial software, and a Windows-signed desktop app.
               Every project is built with Claude as the core development

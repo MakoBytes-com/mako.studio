@@ -28,7 +28,7 @@ const jsonLd = {
   name: "Mako Studio",
   alternateName: "MakoAI Studio",
   description:
-    "AI-native web design and engineering studio. Part of Mako Logics.",
+    "AI-native web design and engineering team. The in-house web shop at Mako Logics LLC.",
   url: "https://makoai.studio",
   telephone: "+1-281-206-4848",
   email: "admin@makoai.studio",

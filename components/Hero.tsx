@@ -120,8 +120,8 @@ export default function Hero() {
           </h1>
 
           <p className="mt-6 max-w-xl text-[16px] md:text-[18px] text-steel-300 leading-relaxed">
-            Mako Studio is the web practice inside Mako Logics. Every site we
-            ship is designed, built, and deployed with AI-native workflows —
+            Mako Studio is the in-house web team at Mako Logics. Every site
+            we ship is designed, built, and deployed with AI-native workflows —
             premium quality at a fraction of traditional agency timelines.
           </p>
 

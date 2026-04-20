@@ -8,8 +8,8 @@ const pillars = [
     body: "Traditional agencies hand off a design to a developer and lose two weeks in translation. AI-native workflows compress design + code into one motion — you see working pages sooner."
   },
   {
-    title: "One person, full pipeline",
-    body: "Discovery, design, engineering, deployment, maintenance — one operator with AI leverage covers what used to take a five-person team. Nothing gets lost between specialists."
+    title: "One engineer, full pipeline",
+    body: "Discovery, design, engineering, deployment, maintenance — each project runs through one engineer with AI leverage, end-to-end. What used to take a five-person team now takes one. Nothing gets lost between specialists because there are no specialists to hand off to."
   },
   {
     title: "Premium quality at startup speed",

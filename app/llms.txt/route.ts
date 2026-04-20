@@ -7,8 +7,9 @@ const body = `# Mako Studio
 Mako Studio designs and ships modern, premium websites for small businesses,
 professionals, and ambitious brands. Every project is built with Claude as
 the core development partner — no WordPress, no visual page builders, no
-templates-as-products. One operator runs the full pipeline: discovery,
-design, engineering, deployment, maintenance.
+templates-as-products. Each project runs through one engineer with AI
+leverage end-to-end: discovery, design, engineering, deployment,
+maintenance. No hand-offs between specialists.
 
 ## Contact
 - Email: admin@makoai.studio
@@ -18,7 +19,9 @@ design, engineering, deployment, maintenance.
 ## Services
 - Web Design (custom visual direction, typography, motion, no templates)
 - Web Development (Next.js, React, TypeScript, modern AI-native workflows)
-- SEO & Growth (technical SEO, structured data, Core Web Vitals, AI-search)
+- AI Integration (chatbots, LLM search, content generation, embeddings, RAG)
+- SEO (schema, sitemaps, Core Web Vitals, AI-search ready — built in, not sold as a monthly retainer)
+- Security (rate limits, MFA, strict CSP, edge WAF, error monitoring, dependency audits — hardened day one)
 - Hosting & Ops (Vercel, Cloudflare, domains, email, monitoring, updates)
 
 ## Differentiator

@@ -24,6 +24,26 @@ const services = [
     )
   },
   {
+    title: "AI Integration",
+    body: "Chatbots, LLM-powered search, content generation, embeddings, RAG over client docs. Real AI features shipped inside the product — not bolted-on marketing fluff. It's the whole DNA of this studio.",
+    icon: (
+      <svg viewBox="0 0 32 32" className="w-6 h-6" fill="none">
+        <path
+          d="M13 4L15 11L22 13L15 15L13 22L11 15L4 13L11 11z"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M23 18L24 21L27 22L24 23L23 26L22 23L19 22L22 21z"
+          stroke="currentColor"
+          strokeWidth="1.3"
+          strokeLinejoin="round"
+        />
+      </svg>
+    )
+  },
+  {
     title: "SEO",
     body: "Schema, sitemaps, Core Web Vitals, structured data, AI-search ready (LLMs.txt, FAQ + HowTo). Built in at build time — not sold back to you as a $500/mo retainer. Most \"SEO packages\" are agencies charging monthly to fix what should have been done right the first time. We do it right the first time.",
     icon: (

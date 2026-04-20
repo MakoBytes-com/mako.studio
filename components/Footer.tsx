@@ -9,9 +9,30 @@ export default function Footer() {
               Mako <span className="text-tide-400">Studio</span>
             </div>
             <p className="mt-3 text-[13px] text-steel-400 max-w-sm leading-relaxed">
-              The in-house web team at Mako Logics. We design, build, and
-              ship modern websites for people who care about the result.
+              The in-house web team at Mako Logics LLC. We design, build, and
+              ship modern websites for small businesses in The Woodlands,
+              Montgomery, Conroe, and the greater Houston area.
             </p>
+            <address className="mt-5 not-italic text-[12px] text-steel-400 leading-relaxed space-y-0.5">
+              <div className="text-steel-300">Mako Logics LLC</div>
+              <div>550 Club Dr #264</div>
+              <div>Montgomery, TX 77316</div>
+              <div className="mt-1.5">
+                <a
+                  href="tel:+12812064848"
+                  className="hover:text-steel-200 transition-colors"
+                >
+                  (281) 206-4848
+                </a>
+                <span className="mx-2 text-steel-500/50">·</span>
+                <a
+                  href="mailto:admin@makoai.studio"
+                  className="hover:text-steel-200 transition-colors"
+                >
+                  admin@makoai.studio
+                </a>
+              </div>
+            </address>
           </div>
 
           <div className="md:col-span-3">
@@ -84,7 +105,7 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <a href="/privacy" className="hover:text-steel-200">Privacy</a>
             <a href="/terms" className="hover:text-steel-200">Terms</a>
-            <span className="font-mono tracking-wider">Montgomery, TX</span>
+            <span className="font-mono tracking-wider">Montgomery, TX · Serving Greater Houston</span>
           </div>
         </div>
       </div>

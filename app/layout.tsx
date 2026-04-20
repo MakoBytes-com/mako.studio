@@ -4,9 +4,9 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://makoai.studio"),
-  title: "Mako Studio — Web Design & Development",
+  title: "Mako Studio — AI-Native Web Design · The Woodlands, TX",
   description:
-    "Mako Studio designs and ships modern, premium websites for small businesses, professionals, and ambitious brands. Based in Montgomery, TX.",
+    "AI-native web design and development for small businesses in The Woodlands, Montgomery, Conroe, and the greater Houston area. Custom Next.js sites from $2,500. Based in Montgomery, TX.",
   openGraph: {
     title: "Mako Studio — Web Design & Development",
     description:
@@ -46,10 +46,23 @@ const jsonLd = {
     postalCode: "77316",
     addressCountry: "US"
   },
-  areaServed: {
-    "@type": "Country",
-    name: "United States"
-  },
+  areaServed: [
+    { "@type": "City", name: "The Woodlands", "@id": "https://www.wikidata.org/wiki/Q49315" },
+    { "@type": "City", name: "Montgomery", sameAs: "https://www.wikidata.org/wiki/Q2143449" },
+    { "@type": "City", name: "Conroe", sameAs: "https://www.wikidata.org/wiki/Q385584" },
+    { "@type": "City", name: "Spring", sameAs: "https://www.wikidata.org/wiki/Q987466" },
+    { "@type": "City", name: "Houston", sameAs: "https://www.wikidata.org/wiki/Q16555" },
+    { "@type": "AdministrativeArea", name: "Montgomery County, Texas" },
+    { "@type": "AdministrativeArea", name: "Harris County, Texas" },
+    { "@type": "Country", name: "United States" }
+  ],
+  serviceType: [
+    "Web Design",
+    "Web Development",
+    "AI Integration",
+    "SEO",
+    "Web Hosting"
+  ],
   knowsAbout: [
     "Web Design",
     "Web Development",
@@ -57,6 +70,14 @@ const jsonLd = {
     "AI-native development",
     "SEO",
     "Managed Hosting"
+  ],
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "18:00"
+    }
   ],
   sameAs: ["https://github.com/MakoBytes-com"]
 };

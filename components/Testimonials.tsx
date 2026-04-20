@@ -50,42 +50,16 @@ export default async function Testimonials() {
 
   const { reviews, rating, userRatingCount } = data;
 
-  // JSON-LD for rich results (organization aggregate rating + reviews)
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: "Mako Logics",
-    ...(rating && userRatingCount
-      ? {
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: rating.toFixed(1),
-            reviewCount: userRatingCount
-          }
-        }
-      : {}),
-    review: reviews.slice(0, 5).map((r) => ({
-      "@type": "Review",
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: r.rating,
-        bestRating: 5
-      },
-      author: { "@type": "Person", name: r.authorName },
-      reviewBody: r.text,
-      datePublished: r.publishTime
-    }))
-  };
+  // Note: no JSON-LD here. These reviews are for Mako Logics LLC (the parent
+  // MSP), not Mako Studio — claiming them as schema on makoai.studio could be
+  // read as duplicate-entity / review-spam by Google. They render visually as
+  // honest social proof; the parent company link clarifies attribution.
 
   return (
     <section
       id="testimonials"
       className="relative py-28 md:py-36 border-b border-white/5"
     >
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <div className="container-narrow">
         <div className="grid md:grid-cols-12 gap-10 mb-14">
           <div className="md:col-span-5">
@@ -101,9 +75,19 @@ export default async function Testimonials() {
           <div className="md:col-span-6 md:col-start-7 flex items-end">
             <div>
               <p className="text-[16px] text-steel-300 leading-relaxed">
-                Pulled live from Mako Logics' Google Business profile.
-                We&apos;ve been doing IT + web work for Houston-area
-                businesses since 2010 — the same people keep coming back.
+                Pulled live from{" "}
+                <a
+                  href="https://makologics.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-tide-300 hover:text-tide-200 underline decoration-tide-500/30 underline-offset-2"
+                >
+                  Mako Logics&apos;
+                </a>{" "}
+                Google Business profile — our parent company. We&apos;ve been
+                doing IT + web work for The Woodlands, Montgomery, Conroe, and
+                greater Houston businesses since 2010 — the same people keep
+                coming back.
               </p>
               {rating && userRatingCount ? (
                 <div className="mt-5 inline-flex items-center gap-3 glass rounded-full px-4 py-2">

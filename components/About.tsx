@@ -45,12 +45,17 @@ export default function About() {
             </h2>
             <p className="mt-6 text-[15px] text-steel-300 leading-relaxed">
               Mako Studio is the in-house AI-native web team at{" "}
-              <span className="text-steel-100">Mako Logics LLC</span> — a
-              Texas-based shop that's shipped AI platforms, client sites,
-              commercial software, and a Windows-signed desktop app.
-              Every project is built with Claude as the core development
-              partner. No WordPress, no page builders, no templates —
-              custom code, production-grade, end-to-end.
+              <span className="text-steel-100">Mako Logics LLC</span>, based in
+              Montgomery, TX. We serve small businesses across{" "}
+              <span className="text-steel-100">
+                The Woodlands, Montgomery, Conroe, Spring, and the greater
+                Houston area
+              </span>
+              . We&apos;ve shipped AI platforms, client sites, commercial
+              software, and a Windows-signed desktop app. Every project is
+              built with Claude as the core development partner. No WordPress,
+              no page builders, no templates — custom code, production-grade,
+              end-to-end.
             </p>
 
             <div className="mt-10 grid grid-cols-2 gap-6">

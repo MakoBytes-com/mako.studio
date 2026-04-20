@@ -1,6 +1,6 @@
 const stats = [
-  { n: "100+", l: "Sites Shipped" },
-  { n: "100%", l: "On-time Launches" },
+  { n: "2010", l: "Shipping Since" },
+  { n: "10+", l: "Selected Works" },
   { n: "<2s", l: "Typical LCP" },
   { n: "1", l: "Point of Contact" }
 ];

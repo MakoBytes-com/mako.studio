@@ -4,9 +4,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Web Design for The Woodlands, TX — Mako Studio",
+  title: "AI-Native Web Design for The Woodlands, TX — Mako Studio",
   description:
-    "Custom, AI-native web design for small businesses in The Woodlands, TX. Healthcare, professional services, and boutique retail — built from Montgomery, 20 minutes up I-45. Featured work: Family Psychiatry of The Woodlands.",
+    "Custom Next.js web design for small businesses in The Woodlands, TX — no WordPress, no templates. Healthcare, professional services, and boutique retail. Featured work: Family Psychiatry of The Woodlands. Built from Montgomery, 20 min up I-45.",
   alternates: { canonical: "https://makoai.studio/serving/the-woodlands-tx" },
   openGraph: {
     title: "Web Design for The Woodlands, TX — Mako Studio",
@@ -126,12 +126,23 @@ export default function WoodlandsPage() {
                 no template swap with the city name changed.
               </p>
               <p>
-                If you&apos;re in Creekside Park, Village of Grogan&apos;s
-                Mill, or anywhere the Research Forest corridor bleeds into
-                Spring — we&apos;re close enough for an in-person kickoff
-                meeting and cheap enough that it&apos;s never &quot;worth the
-                drive&quot; to hire a Houston-downtown agency with five
-                hand-offs between you and the person writing code.
+                Whether you&apos;re in Alden Bridge, Cochran&apos;s Crossing,
+                Carlton Woods, Creekside Park, Indian Springs, Grogan&apos;s
+                Mill, or Sterling Ridge — or anywhere the Research Forest
+                corridor bleeds into Spring — we&apos;re close enough for an
+                in-person kickoff meeting and cheap enough that it&apos;s
+                never &quot;worth the drive&quot; to hire a Houston-downtown
+                agency with five hand-offs between you and the person writing
+                code.
+              </p>
+              <p>
+                We also work often with Town Center retail, Hughes Landing
+                professional services, and medical offices clustered around
+                Memorial Hermann and Houston Methodist The Woodlands. If your
+                business is in a walk-in-foot-traffic context, the Town
+                Center area; if it&apos;s professional services, most of our
+                Woodlands clientele sits somewhere in the belt between
+                Research Forest Drive and the Hardy Toll Road.
               </p>
             </div>
           </div>

@@ -4,9 +4,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Web Design for Greater Houston, TX — Mako Studio",
+  title: "AI-Native Web Design for Greater Houston, TX — Mako Studio",
   description:
-    "Custom Next.js web design for Houston-area businesses. Industrial B2B, energy-corridor service firms, specialty trades, and small businesses that need more than a WordPress template. Featured work: Buffalo Seal & Gasket.",
+    "Custom Next.js web design for Houston-area businesses — no WordPress, no templates. Industrial B2B, energy corridor, specialty trades, and small businesses that need more than a Galleria-priced agency can profitably deliver. Featured: Buffalo Seal & Gasket.",
   alternates: { canonical: "https://makoai.studio/serving/houston-tx" },
   openGraph: {
     title: "Web Design for Greater Houston, TX — Mako Studio",
@@ -138,6 +138,15 @@ export default function HoustonPage() {
                 and far enough from the Energy Corridor rents that we can
                 charge what our work is actually worth instead of what a
                 Galleria agency needs to charge to make rent.
+              </p>
+              <p>
+                Our Houston-area work spans the Energy Corridor and Memorial
+                out west, the Galleria and Uptown, the Medical Center and its
+                support businesses, northwest Houston through Cypress and
+                Tomball, north into Spring, The Woodlands, and Conroe, and
+                southeast into League City, Clear Lake, and Kemah. If your
+                business is inside Beltway 8 or the I-45 / US-290 / I-10
+                corridors, we&apos;re within one drive for a kickoff.
               </p>
             </div>
           </div>

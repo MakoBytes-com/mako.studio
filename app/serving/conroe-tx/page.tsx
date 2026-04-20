@@ -4,9 +4,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Web Design for Conroe, TX — Mako Studio",
+  title: "AI-Native Web Design for Conroe, TX — Mako Studio",
   description:
-    "Custom web design and development for Conroe, TX businesses. Trades, service-area B2B, investigation firms, industrial — built from Montgomery, 15 minutes away. 10+ year Makologics MSP clients still run on sites we built.",
+    "Custom Next.js web design for Conroe, TX businesses — no WordPress, no templates. Trades, service-area B2B, investigation firms, and industrial. 10+ year Makologics MSP tenure with Conroe clients. Built from Montgomery, 15 min away.",
   alternates: { canonical: "https://makoai.studio/serving/conroe-tx" },
   openGraph: {
     title: "Web Design for Conroe, TX — Mako Studio",
@@ -131,6 +131,16 @@ export default function ConroePage() {
                 relationships came out of Conroe and stayed there for ten-plus
                 years because we&apos;re 15 minutes up the road and we
                 actually pick up the phone.
+              </p>
+              <p>
+                We work across the full Conroe footprint — downtown Conroe
+                and the historic district off Frazier, the commercial corridor
+                along FM 105 and Loop 336, Lake Conroe lakefront businesses
+                around April Sound and Bentwater, the newer master-planned
+                areas of Grand Central Park and Artavia, and out to Panorama
+                Village and Woodforest. We also take Montgomery County work
+                in Willis, Magnolia, and the Lake Conroe north shore when
+                the fit makes sense.
               </p>
             </div>
           </div>

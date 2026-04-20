@@ -4,7 +4,7 @@ export default function Footer() {
     <footer className="relative py-16 bg-ink-900">
       <div className="container-narrow">
         <div className="grid md:grid-cols-12 gap-8 pb-10 border-b border-white/5">
-          <div className="md:col-span-5">
+          <div className="md:col-span-4">
             <div className="font-display font-semibold text-[22px] tracking-tight">
               Mako <span className="text-tide-400">Studio</span>
             </div>
@@ -35,7 +35,7 @@ export default function Footer() {
             </address>
           </div>
 
-          <div className="md:col-span-3">
+          <div className="md:col-span-2">
             <h4 className="text-[11px] tracking-[0.2em] uppercase text-steel-400 mb-4">
               Studio
             </h4>
@@ -51,6 +51,11 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a href="/pricing" className="text-steel-300 hover:text-white">
+                  Pricing
+                </a>
+              </li>
+              <li>
                 <a href="/#about" className="text-steel-300 hover:text-white">
                   About
                 </a>
@@ -63,7 +68,39 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="md:col-span-4">
+          <div className="md:col-span-3">
+            <h4 className="text-[11px] tracking-[0.2em] uppercase text-steel-400 mb-4">
+              Service Areas
+            </h4>
+            <ul className="space-y-2 text-[13px]">
+              <li>
+                <a
+                  href="/serving/the-woodlands-tx"
+                  className="text-steel-300 hover:text-white"
+                >
+                  The Woodlands, TX
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/serving/conroe-tx"
+                  className="text-steel-300 hover:text-white"
+                >
+                  Conroe, TX
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/serving/houston-tx"
+                  className="text-steel-300 hover:text-white"
+                >
+                  Greater Houston, TX
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="md:col-span-3">
             <h4 className="text-[11px] tracking-[0.2em] uppercase text-steel-400 mb-4">
               Elsewhere
             </h4>

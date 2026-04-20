@@ -37,5 +37,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8
   }));
 
-  return [...base, ...caseStudies];
+  const serviceAreas: MetadataRoute.Sitemap = [
+    "the-woodlands-tx",
+    "conroe-tx",
+    "houston-tx"
+  ].map((slug) => ({
+    url: `https://makoai.studio/serving/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.8
+  }));
+
+  return [...base, ...caseStudies, ...serviceAreas];
 }

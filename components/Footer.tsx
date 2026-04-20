@@ -20,22 +20,22 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-[13px]">
               <li>
-                <a href="#work" className="text-steel-300 hover:text-white">
+                <a href="/#work" className="text-steel-300 hover:text-white">
                   Work
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-steel-300 hover:text-white">
+                <a href="/#services" className="text-steel-300 hover:text-white">
                   Services
                 </a>
               </li>
               <li>
-                <a href="#about" className="text-steel-300 hover:text-white">
+                <a href="/#about" className="text-steel-300 hover:text-white">
                   About
                 </a>
               </li>
               <li>
-                <a href="#contact" className="text-steel-300 hover:text-white">
+                <a href="/#contact" className="text-steel-300 hover:text-white">
                   Contact
                 </a>
               </li>

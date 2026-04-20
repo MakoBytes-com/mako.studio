@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 
 const links = [
-  { href: "#work", label: "Work" },
-  { href: "#services", label: "Services" },
-  { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact" }
+  { href: "/#work", label: "Work" },
+  { href: "/#services", label: "Services" },
+  { href: "/#about", label: "About" },
+  { href: "/#contact", label: "Contact" }
 ];
 
 export default function Navbar() {
@@ -29,7 +29,7 @@ export default function Navbar() {
       }`}
     >
       <div className="container-narrow flex items-center justify-between h-16 md:h-20">
-        <a href="#top" className="flex items-center gap-3 group">
+        <a href="/" className="flex items-center gap-3 group">
           <MakoMark />
           <span className="font-display font-semibold text-[17px] tracking-tight">
             Mako <span className="text-tide-400">Studio</span>
@@ -47,7 +47,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="/#contact"
             className="text-[13px] px-4 py-2 rounded-full bg-tide-500 hover:bg-tide-400 text-white font-medium transition-colors shadow-glow"
           >
             Start a project
@@ -93,7 +93,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="#contact"
+              href="/#contact"
               onClick={() => setOpen(false)}
               className="mt-3 text-center text-[14px] px-4 py-3 rounded-full bg-tide-500 text-white font-medium"
             >

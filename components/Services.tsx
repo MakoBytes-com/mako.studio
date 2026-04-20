@@ -1,3 +1,9 @@
+const serviceAreas = [
+  { href: "/serving/the-woodlands-tx", label: "The Woodlands, TX" },
+  { href: "/serving/conroe-tx", label: "Conroe, TX" },
+  { href: "/serving/houston-tx", label: "Greater Houston, TX" }
+];
+
 const services = [
   {
     title: "Web Design",
@@ -136,6 +142,50 @@ export default function Services() {
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="mt-10 glass rounded-2xl p-6 md:p-7 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+          <div className="flex items-start gap-4">
+            <div className="w-11 h-11 shrink-0 rounded-xl bg-tide-500/10 text-tide-300 flex items-center justify-center">
+              <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+                <path
+                  d="M12 21s7-7.5 7-13a7 7 0 10-14 0c0 5.5 7 13 7 13z"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                />
+                <circle cx="12" cy="9" r="2.5" stroke="currentColor" strokeWidth="1.5" />
+              </svg>
+            </div>
+            <div>
+              <h3 className="font-display text-[17px] font-semibold text-steel-100">
+                Serving Montgomery County &amp; Greater Houston
+              </h3>
+              <p className="mt-1 text-[13px] text-steel-400 leading-relaxed">
+                Pick your city for a page with local case studies, neighborhood
+                context, and how we work with businesses in your area.
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-2 md:shrink-0">
+            {serviceAreas.map((a) => (
+              <a
+                key={a.href}
+                href={a.href}
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-white/10 hover:border-tide-500/40 hover:bg-white/5 text-[13px] text-steel-200 hover:text-steel-100 font-medium transition-colors"
+              >
+                {a.label}
+                <svg viewBox="0 0 16 16" className="w-3 h-3" fill="none">
+                  <path
+                    d="M3 8h10m0 0l-4-4m4 4l-4 4"
+                    stroke="currentColor"
+                    strokeWidth="1.75"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>

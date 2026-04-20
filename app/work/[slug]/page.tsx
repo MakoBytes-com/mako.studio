@@ -127,6 +127,28 @@ export default async function CaseStudyPage({
             {cs.oneLiner}
           </p>
 
+          {cs.viewUrl ? (
+            <div className="mt-8">
+              <a
+                href={cs.viewUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-tide-500 hover:bg-tide-600 text-white text-[14px] font-medium transition-all shadow-glow"
+              >
+                {cs.viewLabel ?? "Visit the site"}
+                <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none">
+                  <path
+                    d="M7 17L17 7M17 7H8M17 7v9"
+                    stroke="currentColor"
+                    strokeWidth="1.75"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+          ) : null}
+
           <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 border-t border-white/5 pt-8">
             <MetaItem label="Client" value={cs.client} />
             <MetaItem label="Role" value={cs.role} />

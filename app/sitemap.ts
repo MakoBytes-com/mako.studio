@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
+import { caseStudySlugs } from "@/lib/portfolio";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  return [
+  const base: MetadataRoute.Sitemap = [
     {
       url: "https://makoai.studio",
       lastModified: now,
@@ -22,4 +23,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.3
     }
   ];
+
+  const caseStudies: MetadataRoute.Sitemap = caseStudySlugs().map((slug) => ({
+    url: `https://makoai.studio/work/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.8
+  }));
+
+  return [...base, ...caseStudies];
 }

@@ -103,7 +103,7 @@ export default async function Testimonials() {
               <p className="text-[16px] text-steel-300 leading-relaxed">
                 Pulled live from Mako Logics' Google Business profile.
                 We&apos;ve been doing IT + web work for Houston-area
-                businesses since 2014 — the same people keep coming back.
+                businesses since 2010 — the same people keep coming back.
               </p>
               {rating && userRatingCount ? (
                 <div className="mt-5 inline-flex items-center gap-3 glass rounded-full px-4 py-2">

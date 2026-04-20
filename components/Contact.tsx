@@ -1,12 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useState } from "react";
+import Turnstile from "./Turnstile";
 
 type Status = "idle" | "loading" | "success" | "error";
+
+const TURNSTILE_ENABLED = Boolean(process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY);
 
 export default function Contact() {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string | null>(null);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+
+  const handleToken = useCallback((token: string) => setCaptchaToken(token), []);
+  const handleExpire = useCallback(() => setCaptchaToken(null), []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -14,7 +21,16 @@ export default function Contact() {
     setError(null);
 
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form).entries());
+    const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
+
+    if (TURNSTILE_ENABLED) {
+      if (!captchaToken) {
+        setStatus("error");
+        setError("Please complete the verification challenge below.");
+        return;
+      }
+      data["cf-turnstile-response"] = captchaToken;
+    }
 
     try {
       const res = await fetch("/api/contact", {
@@ -30,6 +46,7 @@ export default function Contact() {
 
       setStatus("success");
       form.reset();
+      setCaptchaToken(null);
     } catch (err) {
       setStatus("error");
       setError(err instanceof Error ? err.message : "Submission failed");
@@ -147,9 +164,15 @@ export default function Contact() {
                 autoComplete="off"
               />
 
+              {TURNSTILE_ENABLED && (
+                <div className="pt-1">
+                  <Turnstile onToken={handleToken} onExpire={handleExpire} />
+                </div>
+              )}
+
               <button
                 type="submit"
-                disabled={status === "loading"}
+                disabled={status === "loading" || (TURNSTILE_ENABLED && !captchaToken)}
                 className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-tide-500 hover:bg-tide-400 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium text-[14px] transition-all shadow-glow"
               >
                 {status === "loading" ? "Sending…" : "Send message"}

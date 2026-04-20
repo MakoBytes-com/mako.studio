@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { renderInquiryEmail } from "@/lib/email";
+import { verifyTurnstile } from "@/lib/turnstile";
 
 export const runtime = "nodejs";
 
@@ -10,10 +12,9 @@ type Body = {
   budget?: string;
   message?: string;
   website?: string;
+  "cf-turnstile-response"?: string;
 };
 
-// In-memory rate limiter — 3 submissions per IP per 10 minutes.
-// Resets on cold start, which is fine for a portfolio contact form.
 const rateMap = new Map<string, number[]>();
 const RATE_MAX = 3;
 const RATE_WINDOW_MS = 10 * 60 * 1000;
@@ -51,9 +52,16 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: true });
   }
 
+  const captcha = await verifyTurnstile(body["cf-turnstile-response"], ip);
+  if (!captcha.ok) {
+    return NextResponse.json({ error: captcha.reason }, { status: 400 });
+  }
+
   const name = (body.name ?? "").trim();
   const email = (body.email ?? "").trim();
   const message = (body.message ?? "").trim();
+  const company = (body.company ?? "").trim() || undefined;
+  const budget = (body.budget ?? "").trim() || undefined;
 
   if (!name || !email || !message) {
     return NextResponse.json(
@@ -73,32 +81,34 @@ export async function POST(req: Request) {
   const to = process.env.CONTACT_TO_EMAIL ?? "admin@makoai.studio";
   const from = process.env.CONTACT_FROM_EMAIL ?? "onboarding@resend.dev";
 
+  const userAgent = req.headers.get("user-agent") ?? undefined;
+  const { subject, html, text } = renderInquiryEmail({
+    name,
+    email,
+    company,
+    budget,
+    message,
+    ip,
+    userAgent
+  });
+
   if (!apiKey) {
     console.warn(
       "[contact] RESEND_API_KEY is not set — dropping submission to console only."
     );
-    console.log("[contact] Submission:", { name, email, body });
+    console.log("[contact] Submission:", { name, email, company, budget });
     return NextResponse.json({ ok: true, devFallback: true });
   }
 
   const resend = new Resend(apiKey);
 
-  const html = `
-    <h2>New Mako Studio inquiry</h2>
-    <p><strong>Name:</strong> ${escape(name)}</p>
-    <p><strong>Email:</strong> ${escape(email)}</p>
-    <p><strong>Company:</strong> ${escape(body.company ?? "—")}</p>
-    <p><strong>Budget:</strong> ${escape(body.budget ?? "—")}</p>
-    <hr />
-    <p style="white-space:pre-wrap">${escape(message)}</p>
-  `;
-
   const { error } = await resend.emails.send({
     from: `Mako Studio <${from}>`,
     to: [to],
     replyTo: email,
-    subject: `New inquiry — ${name}`,
-    html
+    subject,
+    html,
+    text
   });
 
   if (error) {
@@ -110,13 +120,4 @@ export async function POST(req: Request) {
   }
 
   return NextResponse.json({ ok: true });
-}
-
-function escape(s: string): string {
-  return s
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
 }

@@ -36,3 +36,6 @@ next-env.d.ts
 CLAUDE.md
 AGENTS.md
 .cursorrules
+
+# Claude Code local settings
+.claude/

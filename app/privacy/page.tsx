@@ -5,7 +5,8 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Privacy Policy — Mako Studio",
   description:
-    "How Mako Studio handles the limited personal information we collect through this website."
+    "How Mako Studio handles the limited personal information we collect through this website.",
+  alternates: { canonical: "https://makoai.studio/privacy" }
 };
 
 export default function Privacy() {

@@ -5,7 +5,8 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Terms of Service — Mako Studio",
   description:
-    "Plain-language terms of service for the Mako Studio marketing site."
+    "Plain-language terms of service for the Mako Studio marketing site.",
+  alternates: { canonical: "https://makoai.studio/terms" }
 };
 
 export default function Terms() {

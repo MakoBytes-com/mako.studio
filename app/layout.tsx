@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Mako Studio — AI-Native Web Design · The Woodlands, TX",
   description:
     "AI-native web design and development for small businesses in The Woodlands, Montgomery, Conroe, and the greater Houston area. Custom Next.js sites from $2,500. Based in Montgomery, TX.",
+  alternates: { canonical: "https://makoai.studio" },
   openGraph: {
     title: "Mako Studio — Web Design & Development",
     description:

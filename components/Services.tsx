@@ -24,12 +24,33 @@ const services = [
     )
   },
   {
-    title: "SEO & Growth",
-    body: "Technical SEO, structured data, sitemaps, Core Web Vitals, and content structure that ranks. Plus AI-search optimization (LLMs.txt, FAQ schema).",
+    title: "SEO",
+    body: "Schema, sitemaps, Core Web Vitals, structured data, AI-search ready (LLMs.txt, FAQ + HowTo). Built in at build time — not sold back to you as a $500/mo retainer. Most \"SEO packages\" are agencies charging monthly to fix what should have been done right the first time. We do it right the first time.",
     icon: (
       <svg viewBox="0 0 32 32" className="w-6 h-6" fill="none">
         <circle cx="14" cy="14" r="8" stroke="currentColor" strokeWidth="1.5" />
         <path d="M20 20l6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      </svg>
+    )
+  },
+  {
+    title: "Security",
+    body: "Rate limits, Turnstile, MFA, strict CSP, encrypted secrets, Cloudflare edge WAF, error monitoring, automated dependency audits. Not an add-on, not a post-breach scramble — every Mako site ships hardened from day one. The same protection we use on the portal that runs our own business.",
+    icon: (
+      <svg viewBox="0 0 32 32" className="w-6 h-6" fill="none">
+        <path
+          d="M16 4l10 4v8c0 6-4.5 10-10 12-5.5-2-10-6-10-12V8l10-4z"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M12 16l3 3 5-6"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </svg>
     )
   },

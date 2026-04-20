@@ -31,3 +31,8 @@ next-env.d.ts
 .idea
 
 .vercel
+
+# MakoBot auto-injected (local dev context, not source)
+CLAUDE.md
+AGENTS.md
+.cursorrules

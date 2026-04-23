@@ -11,6 +11,8 @@ import { writeFile, mkdir } from "node:fs/promises";
 import { resolve } from "node:path";
 
 const sites = [
+  { slug: "aaaawning", url: "https://www.aaaawning.net" },
+  { slug: "lagunares", url: "https://lagunares-com.vercel.app" },
   { slug: "toppaws", url: "https://toppaws.com" },
   { slug: "makobot", url: "https://makobot.com" },
   { slug: "aipromptshive", url: "https://aipromptshive.com" },
@@ -23,12 +25,17 @@ const sites = [
   { slug: "makobytes", url: "https://makobytes.com" }
 ];
 
+const onlyNew = process.argv.includes("--only-new");
+const filtered = onlyNew
+  ? sites.filter((s) => s.slug === "aaaawning" || s.slug === "lagunares")
+  : sites;
+
 const outDir = resolve(process.cwd(), "public", "portfolio");
 await mkdir(outDir, { recursive: true });
 
 const results = [];
 
-for (const site of sites) {
+for (const site of filtered) {
   const api = new URL("https://api.microlink.io/");
   api.searchParams.set("url", site.url);
   api.searchParams.set("screenshot", "true");

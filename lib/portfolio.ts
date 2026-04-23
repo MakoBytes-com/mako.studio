@@ -43,6 +43,34 @@ export type PortfolioItem = {
 
 export const portfolio: PortfolioItem[] = [
   {
+    slug: "aaaawning",
+    name: "AAA Awning Co.",
+    url: "https://www.aaaawning.net",
+    tagline: "40-year Texas awning fabricator — full WordPress migration",
+    description:
+      "Complete WordPress → Next.js 16 rebuild for a Houston awning manufacturer serving Texas since 1984. 64 prerendered pages including 36 city landing pages with unique local content, LocalBusiness + FAQPage schema, llms.txt for AI-search visibility, live Google reviews, Resend + Turnstile lead form, and a password-protected Umami analytics dashboard.",
+    tags: ["Next.js 16", "Local SEO", "WP Migration", "Resend", "Umami"],
+    status: "Live",
+    year: "2026",
+    accent: "silver",
+    screenshot: "/portfolio/aaaawning.png",
+    tier: "client-build"
+  },
+  {
+    slug: "lagunares",
+    name: "Laguna Resources",
+    url: "https://lagunares-com.vercel.app",
+    tagline: "Energy sales pitch — live presentation build",
+    description:
+      "Pitch site for a Texas energy prospect. Warm editorial theme on light neutrals with a dark cinematic hero. Shipped as a 3-page Vercel build so Russell could present the live URL directly to the client.",
+    tags: ["Next.js 16", "Design", "Pitch build"],
+    status: "In Progress",
+    year: "2026",
+    accent: "steel",
+    screenshot: "/portfolio/lagunares.png",
+    tier: "client-build"
+  },
+  {
     slug: "toppaws",
     name: "TopPaws.com",
     url: "https://toppaws.com",

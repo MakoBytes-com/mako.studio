@@ -63,8 +63,20 @@ export async function fetchPlaceReviews(): Promise<PlaceData | null> {
 
     const raw = (await res.json()) as RawPlace;
 
+    // Keep the public surface on Mako Logics, not the individual owner —
+    // drop reviews that name the founder directly. Word-boundary match so
+    // innocent substrings (if any) can't false-match.
+    const ownerNameRe = /\b(russell|sailors)\b/i;
+
     const reviews: PlaceReview[] = (raw.reviews ?? [])
-      .filter((r) => r.rating && r.text?.text && r.authorAttribution?.displayName)
+      .filter(
+        (r) =>
+          r.rating &&
+          r.text?.text &&
+          r.authorAttribution?.displayName &&
+          !ownerNameRe.test(r.text.text) &&
+          !ownerNameRe.test(r.originalText?.text ?? "")
+      )
       .map((r) => ({
         rating: r.rating ?? 0,
         relativePublishTimeDescription: r.relativePublishTimeDescription ?? "",

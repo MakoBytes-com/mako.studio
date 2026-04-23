@@ -45,8 +45,8 @@ compressing 6-week timelines into 2 without cutting corners.
 ## About
 Based in Montgomery, TX. Remote-first. Mako Studio is the web practice
 inside Mako Logics — a Texas-based shop that ships AI platforms, client
-sites, commercial software, and Windows-signed desktop apps. Russell
-Sailors is the founder and primary operator.
+sites, commercial software, and Windows-signed desktop apps. Operated
+end-to-end by Mako Logics.
 
 ## Parent Organization
 Mako Logics — a small-business IT, AI, and web practice based in

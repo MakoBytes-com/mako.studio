@@ -62,7 +62,7 @@ export const portfolio: PortfolioItem[] = [
     url: "https://lagunares-com.vercel.app",
     tagline: "Energy sales pitch — live presentation build",
     description:
-      "Pitch site for a Texas energy prospect. Warm editorial theme on light neutrals with a dark cinematic hero. Shipped as a 3-page Vercel build so Russell could present the live URL directly to the client.",
+      "Pitch site for a Texas energy prospect. Warm editorial theme on light neutrals with a dark cinematic hero. Shipped as a 3-page Vercel build so Mako Logics could present the live URL directly to the client.",
     tags: ["Next.js 16", "Design", "Pitch build"],
     status: "In Progress",
     year: "2026",

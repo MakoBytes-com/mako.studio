@@ -1,108 +1,28 @@
-"use client";
+import Image from "next/image";
 
-import { useEffect, useRef, useState } from "react";
-
-/**
- * Hero plays a looping background video. If `/hero.mp4` is missing, it falls
- * back to a CSS "underwater" background. To hide the hard-cut on non-seamless
- * AI-generated videos, the component stacks two <video> elements and crossfades
- * between them: the second copy starts playing when the first nears its end,
- * then they swap opacity. The visible "restart" becomes invisible.
- */
 export default function Hero() {
-  const videoA = useRef<HTMLVideoElement>(null);
-  const videoB = useRef<HTMLVideoElement>(null);
-  const [active, setActive] = useState<"a" | "b">("a");
-  const [hasVideo, setHasVideo] = useState(true);
-
-  useEffect(() => {
-    const a = videoA.current;
-    const b = videoB.current;
-    if (!a || !b) return;
-
-    // crossfade duration (seconds) — how long before end we start the other clip
-    const FADE = 1.2;
-
-    const onTimeA = () => {
-      if (!a.duration) return;
-      if (a.currentTime >= a.duration - FADE && active === "a") {
-        b.currentTime = 0;
-        b.play().catch(() => {});
-        setActive("b");
-      }
-    };
-
-    const onTimeB = () => {
-      if (!b.duration) return;
-      if (b.currentTime >= b.duration - FADE && active === "b") {
-        a.currentTime = 0;
-        a.play().catch(() => {});
-        setActive("a");
-      }
-    };
-
-    a.addEventListener("timeupdate", onTimeA);
-    b.addEventListener("timeupdate", onTimeB);
-    a.play().catch(() => {});
-    return () => {
-      a.removeEventListener("timeupdate", onTimeA);
-      b.removeEventListener("timeupdate", onTimeB);
-    };
-  }, [active]);
-
   return (
     <section
       id="top"
       className="relative min-h-[100svh] flex items-center overflow-hidden"
     >
-      {/* Video layer (two staggered copies for seamless crossfade loop) */}
+      {/* Image layer */}
       <div className="absolute inset-0">
-        {hasVideo && (
-          <>
-            <video
-              ref={videoA}
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ${
-                active === "a" ? "opacity-100" : "opacity-0"
-              }`}
-              style={{ filter: "brightness(0.7) saturate(1.05)" }}
-              src="/hero.mp4"
-              autoPlay
-              muted
-              playsInline
-              preload="auto"
-              onError={() => setHasVideo(false)}
-            />
-            <video
-              ref={videoB}
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ${
-                active === "b" ? "opacity-100" : "opacity-0"
-              }`}
-              style={{ filter: "brightness(0.7) saturate(1.05)" }}
-              src="/hero.mp4"
-              muted
-              playsInline
-              preload="auto"
-              onError={() => setHasVideo(false)}
-            />
-          </>
-        )}
+        <Image
+          src="/hero.jpg"
+          alt="AI-native shark — neural brain core surrounded by browser windows, AI assistants, and developer tooling"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center md:object-[65%_center]"
+        />
 
-        {/* Animated fallback — also serves as under-video tint */}
-        {!hasVideo && (
-          <>
-            <div className="water-bg" />
-            <div className="caustics" />
-            <div className="particles" />
-            <div className="shadow-swim" />
-          </>
-        )}
-
-        {/* God rays sit above both video + fallback for consistent mood */}
+        {/* God rays — subtle moving light streaks for atmosphere */}
         <div className="god-rays" />
 
-        {/* Left-weighted dark pane so text stays readable on busy footage.
-            Right side stays bright to show off the video. */}
-        <div className="absolute inset-0 bg-gradient-to-r from-ink-900 via-ink-900/75 to-ink-900/10" />
+        {/* Left-weighted dark pane so text stays readable.
+            Right side stays bright to show the image. */}
+        <div className="absolute inset-0 bg-gradient-to-r from-ink-900 via-ink-900/85 to-ink-900/10" />
         {/* Top + bottom fade — softens navbar edge and transitions into next section */}
         <div className="absolute inset-0 bg-gradient-to-b from-ink-900/60 via-transparent to-ink-900" />
         {/* Subtle blue atmosphere at top */}

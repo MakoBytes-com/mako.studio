@@ -10,24 +10,25 @@
 import { writeFile, mkdir } from "node:fs/promises";
 import { resolve } from "node:path";
 
+// Source thumbnails from frozen showcase forks for client builds whose
+// live site can drift after takeover (buffaloseal, woodlands, aaaawning,
+// bulldog). Source from live URLs for our own products and live-by-us
+// sites where what's live IS what we shipped.
 const sites = [
-  { slug: "aaaawning", url: "https://www.aaaawning.net" },
+  { slug: "bulldog", url: "https://bulldog-showcase.vercel.app" },
+  { slug: "aaaawning", url: "https://aaaawning-showcase.vercel.app" },
   { slug: "lagunares", url: "https://lagunares-com.vercel.app" },
   { slug: "toppaws", url: "https://toppaws.com" },
   { slug: "makobot", url: "https://makobot.com" },
   { slug: "aipromptshive", url: "https://aipromptshive.com" },
-  { slug: "lengleng", url: "https://lengleng.ai" },
-  { slug: "buffaloseal", url: "https://buffalosealandgasket.com" },
-  {
-    slug: "woodlands",
-    url: "https://woodlandsfamilypsychiatry.com"
-  },
+  { slug: "buffaloseal", url: "https://buffaloseal-showcase.vercel.app" },
+  { slug: "woodlands", url: "https://woodlands-showcase.vercel.app" },
   { slug: "makobytes", url: "https://makobytes.com" }
 ];
 
 const onlyNew = process.argv.includes("--only-new");
 const filtered = onlyNew
-  ? sites.filter((s) => s.slug === "aaaawning" || s.slug === "lagunares")
+  ? sites.filter((s) => s.slug === "bulldog" || s.slug === "aaaawning")
   : sites;
 
 const outDir = resolve(process.cwd(), "public", "portfolio");

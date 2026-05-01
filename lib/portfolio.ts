@@ -43,14 +43,28 @@ export type PortfolioItem = {
 
 export const portfolio: PortfolioItem[] = [
   {
+    slug: "bulldog-security",
+    name: "Bulldog Security Service",
+    url: "https://bulldog-showcase.vercel.app",
+    tagline: "ADT authorized dealer — 30,000+ homes protected",
+    description:
+      "Full rebuild for a family-owned ADT authorized dealer serving Texas and Florida. Smart home security, 24/7 monitoring, life safety, and home automation — with a custom theme, location landing pages, and a leads pipeline behind a password-protected admin. Shown as shipped on a frozen showcase fork.",
+    tags: ["Next.js", "Drizzle", "ADT Partner", "Local SEO"],
+    status: "Client",
+    year: "2026",
+    accent: "steel",
+    screenshot: "/portfolio/bulldog.png",
+    tier: "client-build"
+  },
+  {
     slug: "aaaawning",
     name: "AAA Awning Co.",
-    url: "https://www.aaaawning.net",
+    url: "https://aaaawning-showcase.vercel.app",
     tagline: "40-year Texas awning fabricator — full WordPress migration",
     description:
-      "Complete WordPress → Next.js 16 rebuild for a Houston awning manufacturer serving Texas since 1984. 64 prerendered pages including 36 city landing pages with unique local content, LocalBusiness + FAQPage schema, llms.txt for AI-search visibility, live Google reviews, Resend + Turnstile lead form, and a password-protected Umami analytics dashboard.",
+      "Complete WordPress → Next.js 16 rebuild for a Houston awning manufacturer serving Texas since 1984. 64 prerendered pages including 36 city landing pages with unique local content, LocalBusiness + FAQPage schema, llms.txt for AI-search visibility, live Google reviews, Resend + Turnstile lead form, and a password-protected Umami analytics dashboard. Shown as shipped on a frozen showcase fork.",
     tags: ["Next.js 16", "Local SEO", "WP Migration", "Resend", "Umami"],
-    status: "Live",
+    status: "Client",
     year: "2026",
     accent: "silver",
     screenshot: "/portfolio/aaaawning.png",
@@ -212,20 +226,6 @@ export const portfolio: PortfolioItem[] = [
     tier: "product"
   },
   {
-    slug: "lengleng",
-    name: "LengLeng.ai",
-    url: "https://lengleng.ai",
-    tagline: "K-pop aesthetic desktop assistant",
-    description:
-      "Licensed desktop AI assistant with OAuth, license-key system, admin dashboard, maintenance mode, and a K-pop-inspired marketing site.",
-    tags: ["Next.js", "NextAuth", "Neon", "WPF"],
-    status: "Live",
-    year: "2026",
-    accent: "blue",
-    screenshot: "/portfolio/lengleng.png",
-    tier: "product"
-  },
-  {
     slug: "makobytes",
     name: "MakoBytes",
     url: "https://makobytes.com",
@@ -351,23 +351,6 @@ export const portfolio: PortfolioItem[] = [
       outcome:
         "Approved by the client. Replaces their Wix site when they're ready to flip the domain. The showcase fork is deployed and locked as the canonical portfolio version."
     }
-  },
-  {
-    slug: "bulldog-security",
-    name: "Bulldog Security Service",
-    url: "",
-    tagline: "Home security & smart home (ADT partner)",
-    description:
-      "Full site and branding for a multi-state residential security provider and ADT authorized dealer protecting 30,000+ homes. Designed and built from scratch with a custom theme.",
-    tags: ["Long-term client", "Custom theme"],
-    status: "Archived",
-    year: "",
-    accent: "steel",
-    screenshot: "/portfolio/bulldog.png",
-    tier: "earlier-work",
-    archived: true,
-    archivedNote:
-      "10+ year Makologics MSP client · shown as originally shipped · client has since modified the frontend."
   },
   {
     slug: "davis-investigations",

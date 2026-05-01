@@ -34,12 +34,12 @@ compressing 6-week timelines into 2 without cutting corners.
 - TopPaws (https://toppaws.com) — AI creative platform for pet owners with image/video generation, Stripe billing, admin console
 - MakoBot (https://makobot.com) — AI memory tool for Windows, desktop app + marketing site
 - AI Prompts Hive (https://aipromptshive.com) — curated library of 5,000+ AI prompts, SEO-optimized
-- LengLeng.ai (https://lengleng.ai) — K-pop aesthetic desktop AI assistant with license key system
 - MakoBytes (https://makobytes.com) — umbrella site for Mako Logics product line
+- AAA Awning Co. (https://www.aaaawning.net) — Houston, TX custom awning fabricator since 1984 (client)
+- Bulldog Security Service (https://bulldogsecurityservice.com) — multi-state ADT-partner residential security (client)
 - Buffalo Seal & Gasket (https://buffalosealandgasket.com) — Houston, TX industrial seal + gasket supplier (client)
 - Family Psychiatry of The Woodlands (https://woodlandsfamilypsychiatry.com) — The Woodlands, TX psychiatric practice (client)
 - Davis Investigation Services (https://www.davisinvestigationservices.com) — Conroe, TX pre-employment screening firm (maintained by Makologics MSP)
-- Bulldog Security Service (https://bulldogsecurityservice.com) — multi-state ADT-partner residential security (backend + maintenance by Makologics MSP)
 - Pro-Surve Technical Services (https://pro-surve.com) — League City, TX industrial inspection + NDT (maintenance by Makologics MSP)
 
 ## About

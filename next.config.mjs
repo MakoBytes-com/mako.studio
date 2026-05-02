@@ -22,7 +22,7 @@ const nextConfig = {
     //     Testimonials section that pulls live Google reviews via Places API
     //   - Cloudflare Turnstile captcha on the contact form
     //     (challenges.cloudflare.com — script + iframe + form action target)
-    // Flip the header key from "Content-Security-Policy-Report-Only" to
+    // Flip the header key from "Content-Security-Policy" to
     // "Content-Security-Policy" once an audit confirms zero violations.
     const csp = [
       "default-src 'self'",
@@ -56,7 +56,7 @@ const nextConfig = {
             value: "max-age=63072000; includeSubDomains; preload"
           },
           {
-            key: "Content-Security-Policy-Report-Only",
+            key: "Content-Security-Policy",
             value: csp
           }
         ]

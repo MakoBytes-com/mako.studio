@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useCallback, useState } from "react";
 import Turnstile from "./Turnstile";
 
@@ -56,9 +57,25 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-28 md:py-36 border-b border-white/5"
+      className="relative py-28 md:py-36 border-b border-white/5 overflow-hidden"
     >
-      <div className="container-narrow">
+      <div className="absolute inset-0">
+        <Image
+          src="/contact-bg.jpg"
+          alt=""
+          aria-hidden
+          fill
+          sizes="100vw"
+          quality={75}
+          className="object-cover object-center"
+          style={{ filter: "brightness(0.55) saturate(1.1)" }}
+        />
+        <div className="absolute inset-0 bg-ink-900/65" />
+        <div className="absolute inset-0 bg-gradient-to-l from-ink-900 via-ink-900/70 to-ink-900/30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink-900 via-transparent to-ink-900" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.06),transparent_60%)]" />
+      </div>
+      <div className="container-narrow relative">
         <div className="grid md:grid-cols-12 gap-12">
           <div className="md:col-span-5">
             <span className="section-label">Start a project</span>

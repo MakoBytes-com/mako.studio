@@ -1,4 +1,5 @@
 import { fetchPlaceReviews } from "@/lib/places";
+import TestimonialsVideoBackground from "./TestimonialsVideoBackground";
 
 function Stars({ rating }: { rating: number }) {
   return (
@@ -58,9 +59,15 @@ export default async function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="relative py-28 md:py-36 border-b border-white/5"
+      className="relative py-28 md:py-36 border-b border-white/5 overflow-hidden"
     >
-      <div className="container-narrow">
+      <div className="absolute inset-0">
+        <TestimonialsVideoBackground />
+        <div className="absolute inset-0 bg-ink-900/55" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink-900 via-transparent to-ink-900" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.08),transparent_60%)]" />
+      </div>
+      <div className="container-narrow relative">
         <div className="grid md:grid-cols-12 gap-10 mb-14">
           <div className="md:col-span-5">
             <span className="section-label">What clients say</span>

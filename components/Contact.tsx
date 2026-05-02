@@ -66,14 +66,13 @@ export default function Contact() {
           aria-hidden
           fill
           sizes="100vw"
-          quality={75}
+          quality={80}
           className="object-cover object-center"
-          style={{ filter: "brightness(0.55) saturate(1.1)" }}
+          style={{ filter: "saturate(1.1) contrast(1.05)" }}
         />
-        <div className="absolute inset-0 bg-ink-900/65" />
-        <div className="absolute inset-0 bg-gradient-to-l from-ink-900 via-ink-900/70 to-ink-900/30" />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink-900 via-transparent to-ink-900" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.06),transparent_60%)]" />
+        <div className="absolute inset-0 bg-ink-900/25" />
+        <div className="absolute inset-0 bg-gradient-to-l from-ink-900/85 via-ink-900/35 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink-900/70 via-transparent to-ink-900" />
       </div>
       <div className="container-narrow relative">
         <div className="grid md:grid-cols-12 gap-12">
@@ -172,10 +171,14 @@ export default function Contact() {
                 required
               />
 
-              {/* Honeypot — hidden field to catch bots */}
+              {/* Honeypot — hidden field to catch bots. aria-hidden + tabIndex
+                  -1 keep humans and screen readers away; bots that fill every
+                  field still trip it. */}
               <input
                 type="text"
                 name="website"
+                title="Leave this field blank"
+                aria-hidden="true"
                 className="hidden"
                 tabIndex={-1}
                 autoComplete="off"

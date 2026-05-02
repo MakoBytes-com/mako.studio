@@ -32,7 +32,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative py-28 md:py-36 border-b border-white/5"
+      className="relative py-28 md:py-36"
     >
       <div className="container-narrow">
         <div className="grid md:grid-cols-12 gap-12">

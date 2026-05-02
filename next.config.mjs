@@ -11,21 +11,29 @@ const nextConfig = {
     remotePatterns: [{ protocol: "https", hostname: "**" }]
   },
   async headers() {
-    // Content Security Policy — shipped Report-Only first so violations log
-    // to DevTools without breaking the site. Flip the header key below from
-    // "Content-Security-Policy-Report-Only" to "Content-Security-Policy" once
-    // the audit confirms a clean console across the real-user flows (contact
-    // form, work pages, pricing).
+    // Content Security Policy — Report-Only mode (observe, don't enforce).
+    // Tuned for the actual stack on makoai.studio:
+    //   - Vercel Analytics (va.vercel-scripts.com, vitals.vercel-insights.com,
+    //     vercel.live)
+    //   - Google Fonts via external <link href="...fonts.googleapis.com...">
+    //     in app/layout.tsx (style-src/connect-src) and font woff2 from
+    //     fonts.gstatic.com (font-src)
+    //   - Google review avatars (lh3.googleusercontent.com) in the
+    //     Testimonials section that pulls live Google reviews via Places API
+    //   - Cloudflare Turnstile captcha on the contact form
+    //     (challenges.cloudflare.com — script + iframe + form action target)
+    // Flip the header key from "Content-Security-Policy-Report-Only" to
+    // "Content-Security-Policy" once an audit confirms zero violations.
     const csp = [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://vercel.live",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://vercel.live https://challenges.cloudflare.com",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-      "img-src 'self' data: blob:",
+      "img-src 'self' data: blob: https://lh3.googleusercontent.com",
       "font-src 'self' data: https://fonts.gstatic.com",
       "connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com https://vercel.live https://fonts.googleapis.com https://fonts.gstatic.com",
       "media-src 'self'",
-      "frame-src 'self'",
-      "form-action 'self'",
+      "frame-src 'self' https://challenges.cloudflare.com",
+      "form-action 'self' https://challenges.cloudflare.com",
       "object-src 'none'",
       "base-uri 'self'",
       "frame-ancestors 'none'",

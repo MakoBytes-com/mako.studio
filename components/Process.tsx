@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
 const pillars = [
   {
     title: "Built with Claude — every site, every line",
@@ -18,9 +22,81 @@ const pillars = [
 ];
 
 export default function Process() {
+  const videoA = useRef<HTMLVideoElement>(null);
+  const videoB = useRef<HTMLVideoElement>(null);
+  const [active, setActive] = useState<"a" | "b">("a");
+  const [hasVideo, setHasVideo] = useState(true);
+
+  useEffect(() => {
+    const a = videoA.current;
+    const b = videoB.current;
+    if (!a || !b) return;
+
+    const FADE = 1.2;
+
+    const onTimeA = () => {
+      if (!a.duration) return;
+      if (a.currentTime >= a.duration - FADE && active === "a") {
+        b.currentTime = 0;
+        b.play().catch(() => {});
+        setActive("b");
+      }
+    };
+
+    const onTimeB = () => {
+      if (!b.duration) return;
+      if (b.currentTime >= b.duration - FADE && active === "b") {
+        a.currentTime = 0;
+        a.play().catch(() => {});
+        setActive("a");
+      }
+    };
+
+    a.addEventListener("timeupdate", onTimeA);
+    b.addEventListener("timeupdate", onTimeB);
+    a.play().catch(() => {});
+    return () => {
+      a.removeEventListener("timeupdate", onTimeA);
+      b.removeEventListener("timeupdate", onTimeB);
+    };
+  }, [active]);
+
   return (
     <section className="relative py-28 md:py-36 border-b border-white/5 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.08),transparent_60%)] pointer-events-none" />
+      <div className="absolute inset-0">
+        {hasVideo && (
+          <>
+            <video
+              ref={videoA}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ${
+                active === "a" ? "opacity-100" : "opacity-0"
+              }`}
+              style={{ filter: "brightness(0.45) saturate(1.05)" }}
+              src="/process.mp4"
+              autoPlay
+              muted
+              playsInline
+              preload="auto"
+              onError={() => setHasVideo(false)}
+            />
+            <video
+              ref={videoB}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ${
+                active === "b" ? "opacity-100" : "opacity-0"
+              }`}
+              style={{ filter: "brightness(0.45) saturate(1.05)" }}
+              src="/process.mp4"
+              muted
+              playsInline
+              preload="auto"
+              onError={() => setHasVideo(false)}
+            />
+          </>
+        )}
+        <div className="absolute inset-0 bg-ink-900/55" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink-900 via-transparent to-ink-900" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.08),transparent_60%)]" />
+      </div>
       <div className="container-narrow relative">
         <div className="grid md:grid-cols-12 gap-10 mb-16">
           <div className="md:col-span-5">

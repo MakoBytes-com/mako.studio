@@ -23,6 +23,9 @@ const nextConfig = {
     //     Testimonials section that pulls live Google reviews via Places API
     //   - Cloudflare Turnstile captcha on the contact form
     //     (challenges.cloudflare.com — script + iframe + form action target)
+    //   - Google Maps embed in the Contact section (www.google.com /
+    //     maps.google.com in frame-src) — the iframe at the bottom of the
+    //     homepage that shows the Mako Logics HQ pin.
     // Flip the header key from "Content-Security-Policy" to
     // "Content-Security-Policy" once an audit confirms zero violations.
     const csp = [
@@ -33,7 +36,7 @@ const nextConfig = {
       "font-src 'self' data: https://fonts.gstatic.com",
       "connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com https://vercel.live https://fonts.googleapis.com https://fonts.gstatic.com",
       "media-src 'self'",
-      "frame-src 'self' https://challenges.cloudflare.com",
+      "frame-src 'self' https://challenges.cloudflare.com https://www.google.com https://maps.google.com",
       "form-action 'self' https://challenges.cloudflare.com",
       "object-src 'none'",
       "base-uri 'self'",

@@ -72,7 +72,8 @@ export default function Contact() {
         />
         <div className="absolute inset-0 bg-ink-900/25" />
         <div className="absolute inset-0 bg-gradient-to-l from-ink-900/85 via-ink-900/35 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink-900/70 via-transparent to-ink-900" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-ink-900 to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-ink-900 to-transparent" />
       </div>
       <div className="container-narrow relative">
         <div className="grid md:grid-cols-12 gap-12">
